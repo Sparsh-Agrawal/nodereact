@@ -5,19 +5,18 @@ files:
     destination: /var/www/html/
 hooks:
   BeforeInstall:
-    - location: scripts/install_dependencies.sh
-      timeout: 10
+    - location: scripts/before_install.sh
+      timeout: 300
       runas: root
   AfterInstall:
-    - location: scripts/change_permissions.sh
-      timeout: 10
+    - location: scripts/after_install.sh
+      timeout: 300
       runas: root
   ApplicationStart:
     - location: scripts/start_server.sh
-    - location: scripts/create_test_db.sh
-      timeout: 10
+      timeout: 300
       runas: root
   ApplicationStop:
     - location: scripts/stop_server.sh
-      timeout: 10
+      timeout: 300
       runas: root
