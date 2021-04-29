@@ -9,3 +9,4 @@ then
   rm -fr *
 else
   echo "Empty"
+fi
